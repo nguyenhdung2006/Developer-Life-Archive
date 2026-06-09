@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    background-color: #080910;
+    color: #cbd5e1; /* slate-300 */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

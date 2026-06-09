@@ -1,0 +1,35 @@
+import Container from '../components/common/Container'
+
+/**
+ * About — placeholder for the personal introduction, contact, and CV section.
+ */
+function About() {
+  return (
+    <Container className="py-20">
+      <div className="max-w-2xl">
+
+        <span className="inline-block mb-6 px-3 py-1 text-xs font-semibold tracking-widest uppercase rounded-full bg-indigo-900/40 text-indigo-400 border border-indigo-700/30">
+          About
+        </span>
+
+        <h1 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
+          About / Contact
+        </h1>
+
+        <p className="text-slate-400 text-lg leading-relaxed mb-10">
+          Personal introduction, contact links, and CV section will be added
+          here.
+        </p>
+
+        <div className="w-16 h-px bg-indigo-700/40 mb-10" />
+
+        <p className="text-slate-600 text-sm font-mono">
+          ○ Contact form and CV download coming in a future task.
+        </p>
+
+      </div>
+    </Container>
+  )
+}
+
+export default About
