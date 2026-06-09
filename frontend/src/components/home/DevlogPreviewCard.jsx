@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 /** Maps devlog status to styling */
 const statusConfig = {
   Published: {
@@ -65,12 +67,12 @@ function DevlogPreviewCard({ entry, to }) {
       <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
         <span className="text-slate-600 text-xs font-mono">{readingTime}</span>
         {status === 'Published' ? (
-          <a
-            href={to}
+          <Link
+            to={to}
             className="text-indigo-400 hover:text-indigo-300 text-xs font-semibold transition-colors duration-200"
           >
             Read →
-          </a>
+          </Link>
         ) : (
           <span className="text-slate-600 text-xs italic">Coming soon</span>
         )}
