@@ -15,7 +15,7 @@ function ContactPanel() {
             href="https://github.com/nguyenhdung2006"
             target="_blank"
             rel="noreferrer"
-            className="mt-1 inline-flex text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors duration-200"
+            className="mt-1 inline-flex break-all text-sm font-semibold text-cyan-300 hover:text-cyan-200 transition-colors duration-200"
           >
             github.com/nguyenhdung2006
           </a>

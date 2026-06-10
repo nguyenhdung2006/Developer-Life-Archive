@@ -51,7 +51,7 @@ function ProjectCard({ project }) {
     <article className="rounded-2xl border border-white/5 bg-white/[0.03] p-6 flex flex-col gap-5 hover:border-indigo-700/30 hover:bg-indigo-900/5 transition-colors duration-200">
 
       {/* ── Header ─────────────────────────────────────────────────────── */}
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
           {/* Category + featured badge */}
           <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -150,11 +150,11 @@ function ProjectCard({ project }) {
       )}
 
       {/* ── Action row ─────────────────────────────────────────────────── */}
-      <div className="flex flex-wrap items-center gap-3 mt-auto pt-4 border-t border-white/5">
+      <div className="flex flex-col gap-3 mt-auto pt-4 border-t border-white/5 sm:flex-row sm:flex-wrap sm:items-center">
         {/* Internal: View case study */}
         <Link
           to={`/projects/${slug}`}
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors duration-200"
+          className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors duration-200"
         >
           View case study →
         </Link>
@@ -165,7 +165,7 @@ function ProjectCard({ project }) {
             href={links.github}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
           >
             GitHub ↗
           </a>
@@ -177,7 +177,7 @@ function ProjectCard({ project }) {
             href={links.demo}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
           >
             Demo ↗
           </a>
@@ -189,7 +189,7 @@ function ProjectCard({ project }) {
             href={links.video}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
+            className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
           >
             Video ↗
           </a>

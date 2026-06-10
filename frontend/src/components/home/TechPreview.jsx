@@ -29,10 +29,10 @@ function TechPreview({ groups }) {
           {/* Items */}
           <ul className="space-y-2">
             {group.items.map((item) => (
-              <li key={item.name} className="flex items-center justify-between gap-2">
+              <li key={item.name} className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
                 <span className="text-slate-200 text-sm font-medium">{item.name}</span>
                 <span
-                  className={`text-[11px] font-medium shrink-0 ${levelStyle[item.level] ?? 'text-slate-400'}`}
+                  className={`text-[11px] font-medium ${levelStyle[item.level] ?? 'text-slate-400'}`}
                 >
                   {item.level}
                 </span>

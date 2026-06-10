@@ -27,7 +27,7 @@ function Home() {
     <div className="divide-y divide-white/5">
 
       {/* ── A. Hero ─────────────────────────────────────────────────────── */}
-      <section aria-label="Introduction" className="py-20 sm:py-28">
+      <section aria-label="Introduction" className="py-16 sm:py-28">
         <Container>
           <div className="max-w-3xl">
             {/* Eyebrow */}
@@ -36,14 +36,18 @@ function Home() {
             </span>
 
             {/* Greeting + name */}
-            <h1 className="text-5xl sm:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 leading-tight">
               Hi, I'm{' '}
               <span className="text-indigo-400">Huy Dung</span>
             </h1>
 
             {/* Role line */}
-            <p className="text-slate-400 text-base sm:text-lg font-mono mb-6 tracking-wide">
-              Backend Developer &nbsp;|&nbsp; Game Developer &nbsp;|&nbsp; Problem Solver
+            <p className="flex flex-wrap gap-x-2 gap-y-1 text-slate-400 text-sm sm:text-lg font-mono mb-6 tracking-wide">
+              <span>Backend Developer</span>
+              <span className="text-slate-600">|</span>
+              <span>Game Developer</span>
+              <span className="text-slate-600">|</span>
+              <span>Problem Solver</span>
             </p>
 
             {/* Main description */}
@@ -58,7 +62,7 @@ function Home() {
             </p>
 
             {/* CTA buttons */}
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button to="/projects">View Projects</Button>
               <Button to="/devlog" variant="secondary">Read Devlog</Button>
               <Button to="/about" variant="secondary">About / Contact</Button>
@@ -145,7 +149,7 @@ function Home() {
             <p className="text-slate-400 text-base leading-relaxed mb-8">
               Browse project case studies, devlogs, and the learning timeline behind each build.
             </p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Button to="/projects">View Projects</Button>
               <Button to="/about" variant="secondary">About / Contact</Button>
             </div>

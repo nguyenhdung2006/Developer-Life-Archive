@@ -32,7 +32,7 @@ function DevlogPreviewCard({ entry, to }) {
   return (
     <article className="rounded-2xl border border-white/5 bg-white/[0.03] p-6 flex flex-col gap-4 hover:border-indigo-700/30 hover:bg-indigo-900/5 transition-colors duration-200">
       {/* Top row: date + status */}
-      <div className="flex items-center justify-between gap-2">
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <span className="text-slate-600 text-xs font-mono">{date}</span>
         <span
           className={`inline-block px-2 py-0.5 text-[10px] font-semibold tracking-wide uppercase rounded-full border ${config.style}`}
@@ -64,7 +64,7 @@ function DevlogPreviewCard({ entry, to }) {
       </div>
 
       {/* Footer: reading time + link */}
-      <div className="flex items-center justify-between mt-auto pt-2 border-t border-white/5">
+      <div className="flex flex-wrap items-center justify-between gap-2 mt-auto pt-2 border-t border-white/5">
         <span className="text-slate-600 text-xs font-mono">{readingTime}</span>
         {status === 'Published' ? (
           <Link

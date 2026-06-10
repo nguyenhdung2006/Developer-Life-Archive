@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Link, Routes, Route } from 'react-router-dom'
 import Layout from './components/layout/Layout'
 import Home from './pages/Home'
 import Projects from './pages/Projects'
@@ -30,9 +30,9 @@ function App() {
               <div className="flex flex-col items-center justify-center py-40 text-center gap-4">
                 <p className="text-6xl font-bold text-indigo-900">404</p>
                 <p className="text-slate-400 text-lg">Page not found.</p>
-                <a href="/" className="text-indigo-400 hover:text-indigo-300 text-sm underline underline-offset-4">
+                <Link to="/" className="text-indigo-400 hover:text-indigo-300 text-sm underline underline-offset-4">
                   Go home
-                </a>
+                </Link>
               </div>
             }
           />
@@ -43,4 +43,3 @@ function App() {
 }
 
 export default App
-

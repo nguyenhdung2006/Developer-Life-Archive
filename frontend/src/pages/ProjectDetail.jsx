@@ -133,16 +133,16 @@ function ProjectDetail() {
 
         {/* ── I. Bottom CTA ────────────────────────────────────────────── */}
         <section className="py-12 border-t border-white/5">
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link
               to="/projects"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold bg-indigo-600 text-white hover:bg-indigo-500 transition-colors duration-200"
             >
               ← View all projects
             </Link>
             <Link
               to="/devlog"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
+              className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-lg text-sm font-semibold bg-white/5 text-slate-300 border border-white/10 hover:bg-white/10 hover:text-white transition-colors duration-200"
             >
               Read devlog →
             </Link>
@@ -155,4 +155,3 @@ function ProjectDetail() {
 }
 
 export default ProjectDetail
-

@@ -26,7 +26,7 @@ function DevlogCard({ entry, relatedProject }) {
 
   return (
     <article className="rounded-2xl border border-white/5 bg-white/[0.03] p-6 flex flex-col gap-5 hover:border-indigo-700/30 hover:bg-indigo-900/5 transition-colors duration-200">
-      <div className="flex items-start justify-between gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div className="min-w-0">
           <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-indigo-400">
             Build note
