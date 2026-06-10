@@ -27,7 +27,7 @@ const statusConfig = {
 function DevlogPreviewCard({ entry, to }) {
   const { title, date, excerpt, tags, readingTime, status } = entry
   const config = statusConfig[status] ?? statusConfig.Planned
-  const visibleTags = tags.slice(0, 4)
+  const visibleTags = Array.isArray(tags) ? tags.slice(0, 4) : []
 
   return (
     <article className="rounded-2xl border border-white/5 bg-white/[0.03] p-6 flex flex-col gap-4 hover:border-indigo-700/30 hover:bg-indigo-900/5 transition-colors duration-200">

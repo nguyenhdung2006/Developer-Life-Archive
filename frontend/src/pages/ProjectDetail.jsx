@@ -124,7 +124,7 @@ function ProjectDetail() {
         )}
 
         {/* ── H. Screenshots ───────────────────────────────────────────── */}
-        <ProjectDetailSection eyebrow="Assets" title="Screenshots / Demo Assets">
+        <ProjectDetailSection eyebrow="Assets" title="Project Screenshots">
           <ProjectScreenshots
             screenshots={screenshots}
             projectTitle={title}

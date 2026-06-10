@@ -25,7 +25,8 @@ function ProjectPreviewCard({ project }) {
     techStack,
   } = project
 
-  const visibleTech = techStack.slice(0, 5)
+  const safeTechStack = Array.isArray(techStack) ? techStack : []
+  const visibleTech = safeTechStack.slice(0, 5)
   const pillStyle = statusStyle[status] ?? 'bg-slate-700/40 text-slate-400 border-slate-600/30'
 
   return (
@@ -68,9 +69,9 @@ function ProjectPreviewCard({ project }) {
             {tech}
           </span>
         ))}
-        {techStack.length > 5 && (
+        {safeTechStack.length > 5 && (
           <span className="px-2 py-0.5 text-[11px] font-medium rounded bg-slate-800/60 text-slate-500 border border-slate-700/40">
-            +{techStack.length - 5} more
+            +{safeTechStack.length - 5} more
           </span>
         )}
       </div>

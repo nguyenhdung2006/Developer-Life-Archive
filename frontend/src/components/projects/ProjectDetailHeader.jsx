@@ -6,6 +6,22 @@ const statusStyle = {
   Paused: 'bg-slate-800/40 text-slate-500 border-slate-700/30',
 }
 
+function isRealExternalUrl(value) {
+  if (typeof value !== 'string') return false
+
+  const trimmed = value.trim()
+  if (!trimmed || trimmed === '#' || trimmed.toLowerCase() === 'coming-soon') {
+    return false
+  }
+
+  try {
+    const url = new URL(trimmed)
+    return url.protocol === 'https:' || url.protocol === 'http:'
+  } catch {
+    return false
+  }
+}
+
 /**
  * ProjectDetailHeader — top section of the project case study page.
  *
@@ -36,9 +52,10 @@ function ProjectDetailHeader({ project }) {
 
   const displayText = subtitle || summary || null
 
-  const hasGithub = links.github && links.github.trim() !== ''
-  const hasDemo = links.demo && links.demo.trim() !== ''
-  const hasVideo = links.video && links.video.trim() !== ''
+  const safeTechStack = Array.isArray(techStack) ? techStack : []
+  const hasGithub = isRealExternalUrl(links.github)
+  const hasDemo = isRealExternalUrl(links.demo)
+  const hasVideo = isRealExternalUrl(links.video)
   const hasAnyLink = hasGithub || hasDemo || hasVideo
 
   return (
@@ -80,9 +97,9 @@ function ProjectDetailHeader({ project }) {
       )}
 
       {/* Tech stack tags */}
-      {techStack.length > 0 && (
+      {safeTechStack.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-6">
-          {techStack.map((tech) => (
+          {safeTechStack.map((tech) => (
             <span
               key={tech}
               className="px-2.5 py-1 text-xs font-medium rounded-lg bg-slate-800/60 text-slate-300 border border-slate-700/40"

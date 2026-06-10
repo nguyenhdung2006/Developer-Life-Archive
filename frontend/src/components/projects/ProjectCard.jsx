@@ -8,6 +8,22 @@ const statusStyle = {
   Paused: 'bg-slate-800/40 text-slate-500 border-slate-700/30',
 }
 
+function isRealExternalUrl(value) {
+  if (typeof value !== 'string') return false
+
+  const trimmed = value.trim()
+  if (!trimmed || trimmed === '#' || trimmed.toLowerCase() === 'coming-soon') {
+    return false
+  }
+
+  try {
+    const url = new URL(trimmed)
+    return url.protocol === 'https:' || url.protocol === 'http:'
+  } catch {
+    return false
+  }
+}
+
 /**
  * ProjectCard — fuller project card for the /projects page.
  *
@@ -39,13 +55,16 @@ function ProjectCard({ project }) {
   const pillStyle =
     statusStyle[status] ?? 'bg-slate-700/40 text-slate-400 border-slate-600/30'
 
-  const visibleTech = techStack.slice(0, 6)
-  const visibleFeatures = features.slice(0, 3)
-  const visibleChallenges = challenges.slice(0, 2)
+  const safeTechStack = Array.isArray(techStack) ? techStack : []
+  const safeFeatures = Array.isArray(features) ? features : []
+  const safeChallenges = Array.isArray(challenges) ? challenges : []
+  const visibleTech = safeTechStack.slice(0, 6)
+  const visibleFeatures = safeFeatures.slice(0, 3)
+  const visibleChallenges = safeChallenges.slice(0, 2)
 
-  const hasGithub = links.github && links.github.trim() !== ''
-  const hasDemo = links.demo && links.demo.trim() !== ''
-  const hasVideo = links.video && links.video.trim() !== ''
+  const hasGithub = isRealExternalUrl(links.github)
+  const hasDemo = isRealExternalUrl(links.demo)
+  const hasVideo = isRealExternalUrl(links.video)
 
   return (
     <article className="rounded-2xl border border-white/5 bg-white/[0.03] p-6 flex flex-col gap-5 hover:border-indigo-700/30 hover:bg-indigo-900/5 transition-colors duration-200">
@@ -99,9 +118,9 @@ function ProjectCard({ project }) {
                 {f}
               </li>
             ))}
-            {features.length > 3 && (
+            {safeFeatures.length > 3 && (
               <li className="text-xs text-slate-600 font-mono pl-3.5">
-                +{features.length - 3} more
+                +{safeFeatures.length - 3} more
               </li>
             )}
           </ul>
@@ -121,9 +140,9 @@ function ProjectCard({ project }) {
                 {c}
               </li>
             ))}
-            {challenges.length > 2 && (
+            {safeChallenges.length > 2 && (
               <li className="text-xs text-slate-600 font-mono pl-3.5">
-                +{challenges.length - 2} more
+                +{safeChallenges.length - 2} more
               </li>
             )}
           </ul>
@@ -141,9 +160,9 @@ function ProjectCard({ project }) {
               {tech}
             </span>
           ))}
-          {techStack.length > 6 && (
+          {safeTechStack.length > 6 && (
             <span className="px-2 py-0.5 text-[11px] font-medium rounded bg-slate-800/60 text-slate-500 border border-slate-700/40">
-              +{techStack.length - 6} more
+              +{safeTechStack.length - 6} more
             </span>
           )}
         </div>
